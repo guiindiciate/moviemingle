@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\javaprojects\screenmatch\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1461738711.index
+2509210843.index
