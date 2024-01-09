@@ -8,13 +8,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScreenmatchApplication implements CommandLineRunner {
+public class MovieMingleApplication implements CommandLineRunner {
 
 	@Autowired
 	private RepositorySeries repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScreenmatchApplication.class, args);
+		SpringApplication.run(MovieMingleApplication.class, args);
 	}
 
 

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.project</groupId>
-	<artifactId>screenmatch</artifactId>
+	<artifactId>moviemingle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>screenmatch</name>
+	<name>moviemingle</name>
 	<description>Primeiro projeto Spring sem web</description>
 	<properties>
 		<java.version>21</java.version>

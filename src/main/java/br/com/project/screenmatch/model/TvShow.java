@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.OptionalDouble;
 
 @Entity
-@Table(name = "series")
+@Table(name = "tvshows")
 public class TvShow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class TvShow {
     private String actors;
     private String poster;
     private String plot;
-    @Transient
+    @OneToMany(mappedBy = "tvShow", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Episode> episodes = new ArrayList<>();
 
     public TvShow() {}
@@ -41,6 +41,7 @@ public class TvShow {
     }
 
     public void setEpisodes(List<Episode> episodes) {
+        episodes.forEach(e -> e.setTvShow(this));
         this.episodes = episodes;
     }
 
@@ -117,6 +118,8 @@ public class TvShow {
                 ", rating=" + rating +
                 ", actors='" + actors + '\'' +
                 ", poster='" + poster + '\'' +
-                ", plot='" + plot + '\'';
+                ", plot='" + plot + '\'' +
+                ", episodes='" + episodes + '\'';
     }
+
 }

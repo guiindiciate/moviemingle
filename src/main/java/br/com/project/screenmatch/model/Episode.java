@@ -1,14 +1,22 @@
 package br.com.project.screenmatch.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-
+@Entity
+@Table(name = "episodes")
 public class Episode {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Integer season;
     private String title;
     Integer numberEpisode;
     private Double rating;
     private LocalDate releaseDate;
+    @ManyToOne
+    private TvShow tvShow;
 
     public Episode(Integer numberSeason, EpisodesData episodesData) {
         this.season = numberSeason;
@@ -25,6 +33,26 @@ public class Episode {
         } catch (DateTimeParseException ex) {
             this.releaseDate = null;
         }
+    }
+
+    public Episode() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public TvShow getTvShow() {
+        return tvShow;
+    }
+
+    public void setTvShow(TvShow tvShow) {
+        this.tvShow = tvShow;
     }
 
     public Integer getSeason() {
